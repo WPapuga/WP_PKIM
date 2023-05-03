@@ -1,0 +1,36 @@
+version: '3'
+services:
+  server:
+    build:
+      context: ./server
+    ports:
+      - "3080:3080"
+    container_name: server
+    volumes:
+      - ./server:/server
+      - /server/node_modules
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+    container_name: frontend
+    volumes:
+      - ./frontend:/frontend
+      - /frontend/node_modules
+    environment:
+      WATCHPACK_POLLING: true
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 123
+      MYSQL_DB: wp_pkim_db
+  mysql:
+    image: mysql:8.0
+    volumes:
+      -  mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
+      MYSQL_DATABASE: wp_pkim_db
+
+volumes:
+  mysql-data:
