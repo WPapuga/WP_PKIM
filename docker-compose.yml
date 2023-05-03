@@ -1,20 +1,26 @@
 version: '3'
 services:
   server:
+    networks:
+      network:
     build:
       context: ./server
     ports:
-      - "3080:3080"
+      - 3080:3080
     container_name: server
     volumes:
       - ./server:/server
       - /server/node_modules
   frontend:
+    networks:
+      network:
     build:
       context: ./frontend
     ports:
-      - "3000:3000"
+      - 3000:3000
     container_name: frontend
+    depends_on:
+      - server
     volumes:
       - ./frontend:/frontend
       - /frontend/node_modules
@@ -25,7 +31,10 @@ services:
       MYSQL_PASSWORD: 123
       MYSQL_DB: wp_pkim_db
   mysql:
-    image: mysql:8.0
+    networks:
+      network:
+    build:
+      context: ./db
     volumes:
       -  mysql-data:/var/lib/mysql
     environment:
@@ -34,3 +43,7 @@ services:
 
 volumes:
   mysql-data:
+
+networks:
+  network:
+    driver: bridge
