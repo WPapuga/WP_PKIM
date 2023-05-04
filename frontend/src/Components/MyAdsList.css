@@ -5,6 +5,14 @@
     justify-content: center;
 }
 
+.StatusMessage {
+    color: #61dafb;
+}
+
+.ErrorMessage {
+    color: red;
+}
+
 .Ad {
     width: 50%;
     border-style: solid;
