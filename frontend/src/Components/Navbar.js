@@ -49,7 +49,7 @@ function Navbar() {
     return (
       <div className="Navbar">
         <div className="NavLeftSide">
-            <img src="akwarium_logo.png" alt="logo"/>
+            <img src="advertisement.png" alt="logo"/>
             <Link>Ogłoszenia.pl+</Link>
         </div>
         <div className="NavLinks">
