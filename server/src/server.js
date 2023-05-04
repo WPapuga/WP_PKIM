@@ -51,15 +51,48 @@ app.get('/adverts', (req, res) => {
   });
 });
 
+app.get('/advertsCustom', (req, res) => {
+  const user_id = req.query.user_id;
+  console.log(user_id);
+  conn.query('SELECT adverts.id, price, content, username FROM adverts join users on adverts.user_id = users.id WHERE adverts.user_id = (?)', [user_id], (error, results, fields) => {
+    if (error) throw error;
+    console.log('Rekordy z tabeli adverts: ', results);
+    res.send(results);
+  });
+});
+
+app.put('/advertCreate', (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  const price = req.body.price;
+  const content = req.body.content;
+  const user_id = req.body.user_id;
+  conn.query("INSERT INTO adverts (price, content, user_id) VALUES(?,?,?)", [price, content, user_id], (error, result) => {
+    if (error) {
+      console.log(error);
+      res.send({message: "Nie udało się dodać ogłoszenia"});
+    } else {
+      res.send({message: "Sukces"});
+    }
+  })
+});
+
+app.delete('/advertDelete', (req, res) => {
+
+});
+
 app.post('/register', (req, res) => {
   const email = req.body.email;
   const username = req.body.username;
   const password = req.body.password;
-
+  console.log(req.body);
   conn.query("INSERT INTO users (email, username, password) VALUES(?,?,?)", [email, username, password], (error, result) => {
     if (error) {
-      console.log(error);
-      res.send({message: error});
+      console.log("Duplikat");
+      res.send({message: "Użytkownik o podanym emailu/nazwie użytkownika już istnieje"});
     } else {
       res.send({message: "Sukces"});
     }
@@ -81,7 +114,7 @@ app.post('/login', (req, res) => {
     } else {
       if (result.length != 0){
         console.log(result);
-        res.send({ message: "Sukces"});
+        res.send({ message: "Sukces", user_id: result[0].id});
       } else {
         console.log({ message: "Zła kombinacja email/hasło!"});
         res.send({ message: "Zła kombinacja email/hasło!"});
@@ -89,25 +122,6 @@ app.post('/login', (req, res) => {
     }
   })
 });
-
-app.post('/createAd', (req, res) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  const price = req.body.price;
-  const content = req.body.content;
-  const user_id = req.body.user_id;
-  conn.query("INSERT INTO adverts (price, content, user_id) VALUES(?,?,?)", [price, content, user_id], (error, result) => {
-    if (error) {
-      console.log(error);
-      res.send({message: error});
-    } else {
-      res.send({message: "Sukces"});
-    }
-  })
-})
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`)
