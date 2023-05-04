@@ -25,6 +25,7 @@
 }
 
 .App-body {
+  min-height: 800px;
   background-color: #2E3033;
   color: white;
 }
