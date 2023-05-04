@@ -81,7 +81,20 @@ app.put('/advertCreate', (req, res) => {
 });
 
 app.delete('/advertDelete', (req, res) => {
-
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  const id = req.body.id;
+  conn.query("DELETE FROM adverts WHERE id = ?", [id], (error, result) => {
+    if (error) {
+      console.log(error);
+      res.send({message: "Nie udało się usunąć ogłoszenia"});
+    } else {
+      res.send({message: "Sukces"});
+    }
+  })
 });
 
 app.post('/register', (req, res) => {
