@@ -29,7 +29,6 @@ function PostAd() {
       user_id
     });
     setPostMessage(token.message);
-    // window.location.reload(false);
   }
 
   return (
@@ -43,7 +42,7 @@ function PostAd() {
             <Form.Control className='TextArea' as="textarea" placeholder="treść ogłoszenia" value={content} onChange={(event) => setContent(event.target.value)}></Form.Control>
           </Form.Group>
           <Form.Group>
-            <Form.Label className='Label'>Cena</Form.Label>
+            <Form.Label className='Label'>Cena (PLN)</Form.Label>
             <Form.Control className='InputNumber' type='number' placeholder="cena" value={price} onChange={(event) => setPrice(event.target.value)}></Form.Control>
           </Form.Group>
           <Button className='SubmitButton' variant="primary" type="submit">Dodaj ogłoszenie</Button>
