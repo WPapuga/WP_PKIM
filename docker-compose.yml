@@ -11,6 +11,17 @@ services:
     volumes:
       - ./server:/server
       - /server/node_modules
+  api:
+    networks:
+      network:
+    build:
+      context: ./api
+    ports:
+      - 3100:3100
+    container_name: api
+    volumes:
+      - ./api:/api
+      - /api/node_modules
   frontend:
     networks:
       network:
@@ -21,6 +32,7 @@ services:
     container_name: frontend
     depends_on:
       - server
+      - api
     volumes:
       - ./frontend:/frontend
       - /frontend/node_modules
