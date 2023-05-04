@@ -32,6 +32,7 @@ function SignIn() {
     setLoginStatus(token.message);
     if(token.message == "Sukces"){
       sessionStorage.setItem("isLogged", "true");
+      sessionStorage.setItem("user_id", token.user_id);
       navigate('/mojeOgloszenia', { replace: true });
       window.location.reload(false);
     } else {
