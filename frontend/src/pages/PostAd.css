@@ -1,0 +1,70 @@
+.PostAdScreen {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background-color: #2E3033;
+    padding: 90px 0 90px 0;
+    color: #2E3033;
+}
+
+.SubmitContainer {
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    width: 45%;
+    box-shadow: 11px 12px 13px 12px rgb(207,207,207);
+    padding-top: 30px;
+    border-radius: 60px;
+    background-color: white;
+}
+
+.SubmitContainer h1 {
+    color: #2E3033;
+}
+
+.Label { 
+    color: #2E3033;
+    font-size: 23px;
+}
+
+.SubmitForm {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.TextArea {
+    margin: 0 auto; 
+    width: 80%;
+    height: 150px;
+    max-height: 250px;
+    border-radius: 30px;
+    box-shadow: inset 0px 0px 25px 0px #888;
+}
+
+.InputNumber {
+    text-align: center;
+    margin: 0 auto; 
+    width: 80%;
+    height: 50px;
+    border-radius: 60px;
+    box-shadow: inset 0px 0px 25px 0px #888;    
+}
+
+h1 {
+    color: white;
+}
+
+.SubmitButton {
+    font-size: 23px;
+    background-color: #2E3033;
+    border-color: white;
+    color: white;
+}
+
+.PostAdMessage {
+    margin-top: 20px;
+    font-size: 23px;
+    color: #61dafb;
+    font-weight: bold;
+}
