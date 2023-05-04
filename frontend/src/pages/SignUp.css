@@ -1,0 +1,51 @@
+body {
+    background-color: #2E3033;
+}
+
+.SignUpScreen {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background-color: #2E3033;
+    padding: 90px 0 90px 0;
+    color: #2E3033;
+}
+
+.SignUpContainer {
+    justify-content: center;
+    align-items: center;
+    height: 750px;
+    width: 35%;
+    box-shadow: 11px 12px 13px 12px rgb(207,207,207);
+    padding-top: 30px;
+    border-radius: 60px;
+    background-color: white;
+}
+
+.UserImg {
+    padding-top: 20px;
+    max-height: 30%;
+    width: auto;
+}
+
+.Label {
+    font-size: 23px;
+    color: #2E3033;
+}
+.InputField {
+    margin: 0 auto; 
+    width: 300px;
+    height: 50px;
+    border-radius: 60px;
+    box-shadow: inset 0px 0px 25px 0px #888;
+}
+
+.SubmitButton {
+    margin-top: 20px;
+    font-size: 23px;
+    background-color: #2E3033;
+    border-color: white;
+    color: white;
+}
+
+

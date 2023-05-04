@@ -29,9 +29,9 @@ function Navbar() {
         </div>
         <div className="NavSigning">
             <CustomLink to="/logowanie">Zaloguj się</CustomLink>
-            <Link to="/rejestracja">
+            <CustomLink to="/rejestracja">
               <Button className="SignUpButton">Zarejestruj się</Button>
-            </Link>
+            </CustomLink>
         </div>
     </div>
   )
