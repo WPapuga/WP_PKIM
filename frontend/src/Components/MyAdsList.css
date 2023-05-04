@@ -1,0 +1,39 @@
+.AdContainer {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.Ad {
+    width: 50%;
+    border-style: solid;
+    border-color: white;
+}
+
+.AdHeader {
+    display: flex;
+}
+
+.LeftSideHeader {
+    flex: 15%;
+}
+
+.MiddleHeader {
+    flex: 70%;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.RightSideHeader {
+    flex: 15%;
+    align-items: left;
+    justify-items: left;
+}
+
+.RightSideHeader img {
+    padding-top: 30px;
+    max-height: 75px;
+    width: auto;
+}

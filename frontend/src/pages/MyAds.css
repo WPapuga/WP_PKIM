@@ -1,7 +1,28 @@
-p {
-    text-align: center;
+.App-body h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.pagination {
+    margin-top: 50px;
     align-items: center;
-    padding-top: 30px;
+    justify-content: center;
+}
+
+.page-number {
+    text-decoration: none;
     color: white;
     font-size: 23px;
+}
+
+.active {
+    text-decoration: none;
+    color: #61dafb;
+    font-size: 23px;
+}
+
+ul li {
+    font-size: 23px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
