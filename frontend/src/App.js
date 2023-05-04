@@ -1,34 +1,25 @@
-import logo from './logo.svg';
+import { Routes, Route } from "react-router-dom"
+import Navbar from './Components/Navbar'
+import Home from './pages/Home'
+import Ads from './pages/Ads'
+import Currencies from './pages/Currencies'
+import SignIn from './pages/SignIn'
+import SignUp from './pages/SignUp'
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
-  const [testText, setTestText] = useState('');
-
-  useEffect(() => {
-    fetch('http://localhost:3080/test')
-      .then(response => response.text())
-      .then(data => setTestText(data));
-  }, []);
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <p>Test serwera {testText}</p>
-      </header>
-    </div>
+    <>
+    <Navbar />
+    <Routes>
+        <Route path="/" element={ <Home/> } />
+        <Route path="/ogloszenia" element={ <Ads/> } />
+        <Route path="/waluty" element={ <Currencies/> } />
+        <Route path="/logowanie" element={ <SignIn/> } />
+        <Route path="/rejestracja" element={ <SignUp/> } />
+    </Routes>
+    </>
   );
 }
 
