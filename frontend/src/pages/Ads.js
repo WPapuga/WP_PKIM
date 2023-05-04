@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import AdsList from '../Components/AdsList'
-import Pagination from '../Components/Pagination'
+import './Ads.css'
+import ReactPaginate from 'react-paginate';
+
 
 
 function Ads() {
@@ -24,16 +26,26 @@ function Ads() {
   const indexOfFirstAd = indexOfLastAd - adsPerPage;
   const currentAds = adsList.slice(indexOfFirstAd, indexOfLastAd);
 
+  const paginate = ({selected}) => {
+    setCurrentPage(selected + 1);
+ };
+
   return (
     <div className="App">
     <body className="App-body">
-      <div>
-        Ads
+        <h1>Ogłoszenia</h1>
         <AdsList ads={currentAds} loading={loading}/>
-        <p>cos tam</p>
-        <Pagination adsPerPage={adsPerPage} totalAds={adsList.length}/>
-        <p>drugie cos tam</p>
-      </div>
+        <ReactPaginate
+                  onPageChange={paginate}
+                  pageCount={Math.ceil(adsList.length / adsPerPage)}
+                  previousLabel={'Poprz'}
+                  nextLabel={'Nast'}
+                  containerClassName={'pagination'}
+                  pageLinkClassName={'page-number'}
+                  previousLinkClassName={'page-number'}
+                  nextLinkClassName={'page-number'}
+                  activeLinkClassName={'active'}
+        />
     </body>
     </div>
   )

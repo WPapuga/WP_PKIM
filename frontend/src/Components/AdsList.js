@@ -1,4 +1,5 @@
 import React from 'react'
+import './AdsList.css'
 
 function AdsList({ ads, loading }) {
   if(loading){
@@ -6,13 +7,15 @@ function AdsList({ ads, loading }) {
   }
 
   return (
-    ads.map((item) => (
-      <div key={item.id}>
-        <h1>{item.username}</h1>
-        <p>Treść = {item.content}</p>
-        <p>Cena = {item.price}</p>
-      </div>
-    ))
+    <div className="AdContainer">
+      {ads.map((item) => (
+        <div className='Ad' key={item.id}>
+          <h1>{item.username}</h1>
+          <p>Treść = {item.content}</p>
+          <p>Cena = {item.price} {sessionStorage.getItem('currency')}</p>
+        </div>
+      ))}
+    </div>
   )
 }
 
