@@ -10,7 +10,16 @@
     text-decoration: none;
     color: white;
     font-size: 23px;
-    margin-left: 35px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.Navbar a:hover{
+    color: #61dafb;
+}
+
+.Navbar a:active{
+    color: #61dafb;
 }
 
 .Navbar img {
@@ -33,15 +42,55 @@
 
 .Navbar .NavLinks {
     display: flex;
-    flex: 35%;
+    flex: 40%;
     max-height: 80px;
     align-items: center;
     justify-content: left;
 }
 
+.DropdownCurrencies a {
+    margin-left: 0;
+    margin-right: 0;
+    color: black;
+}
+
+.DropdownCurrencies a:active {
+    background-color: #2E3033;
+    color: white;
+}
+
+.DropdownCurrencies button {
+    font-size: 23px;
+    background-color: #2E3033;
+    border-color: white;
+    color: white;
+}
+
+button.DropdownCurrencies:active {
+    color:red;
+}
+
+.btn-primary {
+    --bs-btn-active-color: #2E3033;
+    --bs-btn-active-bg: #ffffff;
+    --bs-btn-active-border-color: #ffffff;
+}
+
+.DropdownCurrencies button:hover {
+    background-color: #61dafb;
+    border-color: #61dafb;
+    color: #2E3033;
+}
+
+.DropdownCurrencies button:focus {
+    background-color: #61dafb;
+    border-color: #61dafb;
+    color: #2E3033;
+}
+
 .Navbar .NavSigning {
     display: flex;
-    flex: 50%;
+    flex: 45%;
     align-items: center;
     justify-content: right;
     margin-right: 40px;
@@ -54,9 +103,33 @@
     color: white;
 }
 
+.Navbar .NavSigning .SignUpButton:hover {
+    background-color: #61dafb;
+    border-color: #61dafb;
+    color: #2E3033;
+}
+
+.Navbar .NavSigning .SignUpButton:active {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #2E3033;
+}
+
 .Navbar .NavSigning .SignOutButton {
     font-size: 23px;
     background-color: #2E3033;
     border-color: white;
     color: white;
+}
+
+.Navbar .NavSigning .SignOutButton:hover {
+    background-color: #61dafb;
+    border-color: #61dafb;
+    color: #2E3033;
+}
+
+.Navbar .NavSigning .SignOutButton:active {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #2E3033;
 }

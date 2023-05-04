@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "../App.css";
 import "./Navbar.css";
 import { Link, useMatch, useResolvedPath } from "react-router-dom";
+import Currencies from './Currencies'
 
 function CustomLink({ to, children, ...props }) {
     const resolvedPath = useResolvedPath(to);
@@ -19,7 +20,7 @@ function CustomLink({ to, children, ...props }) {
 
 function Navbar() {
   const [isLogged, setIsLogged] = useState(sessionStorage.getItem('isLogged'));
-
+  console.log(sessionStorage.getItem('currencyRate') == null ? 1 : sessionStorage.getItem('currencyRate'));
   useEffect(() => {
     setIsLogged(sessionStorage.getItem('isLogged'));
   }, []);
@@ -34,7 +35,8 @@ function Navbar() {
         <div className="NavLinks">
             <CustomLink to="/">Strona Główna</CustomLink>
             <CustomLink to="/ogloszenia">Ogłoszenia</CustomLink>
-            <CustomLink to="/waluty">Zmień Walutę</CustomLink>
+            <div className='DropdownCurrencies'><Currencies></Currencies></div>
+            <Link>{sessionStorage.getItem('currencyCode')}</Link>
         </div>
         <div className="NavSigning">
           <CustomLink to="/tworzenie">Stwórz Ogłoszenie</CustomLink>
@@ -55,7 +57,8 @@ function Navbar() {
         <div className="NavLinks">
             <CustomLink to="/">Strona Główna</CustomLink>
             <CustomLink to="/ogloszenia">Ogłoszenia</CustomLink>
-            <CustomLink to="/waluty">Zmień Walutę</CustomLink>
+            <div className='DropdownCurrencies'><Currencies></Currencies></div>
+            <Link>{sessionStorage.getItem('currencyCode')}</Link>
         </div>
         <div className="NavSigning">
           <CustomLink to="/logowanie">Zaloguj się</CustomLink>
