@@ -17,6 +17,8 @@
     width: 50%;
     border-style: solid;
     border-color: white;
+    border-radius: 15%;
+    background-color: #191C1C;
 }
 
 .AdHeader {
