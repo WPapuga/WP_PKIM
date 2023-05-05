@@ -34,7 +34,7 @@ function MyAds() {
   return (
     <div className="App">
     <body className="App-body">
-        <h1>Ogłoszenia</h1>
+        <h1>Moje Ogłoszenia</h1>
         <MyAdsList ads={currentAds} loading={loading}/>
         <ReactPaginate
                   onPageChange={paginate}
