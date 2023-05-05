@@ -30,7 +30,7 @@ function Navbar() {
       <div className="Navbar">
         <div className="NavLeftSide">
             <img src="advertisement.png" alt="logo"/>
-            <Link>Ogłoszenia.pl+</Link>
+            <Link>Ogłoszenia.pl</Link>
         </div>
         <div className="NavLinks">
             <CustomLink to="/">Strona Główna</CustomLink>
@@ -52,7 +52,7 @@ function Navbar() {
       <div className="Navbar">
         <div className="NavLeftSide">
             <img src="advertisement.png" alt="logo"/>
-            <Link>Ogłoszenia.pl+</Link>
+            <Link>Ogłoszenia.pl</Link>
         </div>
         <div className="NavLinks">
             <CustomLink to="/">Strona Główna</CustomLink>
