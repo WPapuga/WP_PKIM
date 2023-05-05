@@ -1,0 +1,59 @@
+a {
+    color: #61dafb;
+}
+
+h2 {
+    color: white;
+}
+
+.WelcomePageContainer {
+    font-family: Arial, Helvetica, sans-serif;
+    max-height: 300px;
+    display: flex;
+}
+
+.ImageContainer {
+    height: 200px;
+    padding-bottom: 20px;
+}
+
+.WelcomePageContainer img {
+    height: 200px;
+    width: auto;
+}
+
+.LeftContainer {
+    display: flex;
+    flex: 33%;
+    max-width: 33%;
+    max-height: 300px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 30px 0 30px 0;
+}
+
+.CenterContainer {
+    display: flex;
+    flex: 34%;
+    max-width: 34%;
+    max-height: 300px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 30px 0 30px 0;
+}
+
+.RightContainer {
+    display: flex;
+    flex: 33%;
+    max-width: 33%;
+    max-height: 300px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 30px 0 30px 0;
+}

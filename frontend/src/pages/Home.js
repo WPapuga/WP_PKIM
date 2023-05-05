@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from "react-router-dom";
+import './Home.css'
 
 
 export default function Home() {
@@ -13,26 +15,39 @@ export default function Home() {
   return (
     <div className="App">
     <header className="App-header">
-      <img src='advertisement.png' className="App-logo" alt="logo" />
-      <p>
-        Edit <code>src/App.js</code> and save to reload.
-      </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-      <p>Test serwera {testText}</p>
+       <h1>Strona z Ogłoszeniami</h1>
+       <h1>Ogłoszenia.pl</h1>
+       <img src='advertisement.png' className="App-logo" alt="logo" />
+       <h1>Dołącz i handluj</h1>
+       <Link to='/rejestracja'>
+          Dołącz Teraz
+       </Link>
     </header>
-    <body className="App-body">
-      <div>
-        Strona z Ogłoszeniami
-        <br/>
-        Dołącz i handluj
+    <body>
+      <div className='WelcomePageContainer'>
+        <div className='LeftContainer'>
+          <div className='ImageContainer'>
+            <img className='WelcomePageImage' src='country-currencies.png'></img>
+          </div>
+          <br/>
+          <h2>Przeglądaj oferty w różnych walutach</h2>
+        </div>
+        <div className='CenterContainer'>
+          <div className='ImageContainer'>
+            <img className='WelcomePageImage' src='megaphone.png'></img>
+          </div>
+          <br/>
+          <h2>Wystawiaj swoje własne ogłoszenia handlowe</h2>
+        </div>
+        <div className='RightContainer'>
+          <div className='ImageContainer'>
+            <img className='WelcomePageImage' src='trade.png'></img>
+          </div>
+          <br/>
+          <h2>Handluj z innymi ludźmi</h2>
+        </div>
       </div>
+      <br/>
     </body>
     </div>
   )
