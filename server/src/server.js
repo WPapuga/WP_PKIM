@@ -6,20 +6,21 @@ const app = express()
 const port = 3080
 
 
-const conn = mysql.createConnection({
+const conn = mysql.createPool({
+    connectionLimit: 100,
     host: 'mysql',
     user: 'root',
     password: '123',
-    database: 'wp_pkim_db',
+    database: 'wp_pkim_db'
 });
 
-conn.connect(function(err) {
-  if (err) {
-    console.error('Database connection error ' + err.stack);
-    return;
-  }
-  console.log('Connection has been established on thread: ' + conn.threadId);
-});
+// conn.connect(function(err) {
+//   if (err) {
+//     console.error('Database connection error ' + err.stack);
+//     return;
+//   }
+//   console.log('Connection has been established on thread: ' + conn.threadId);
+// });
   
 app.use(cors()); 
 app.use(bodyParser.json()); 
@@ -48,6 +49,29 @@ app.get('/adverts', (req, res) => {
     if (error) throw error;
     console.log('Rekordy z tabeli adverts: ', results);
     res.send(results);
+  });
+});
+
+app.get('/comments', (req, res) => {
+  conn.query('SELECT comments.id, username, ad_id, date, content FROM comments join users on comments.user_id = users.id', function (error, results, fields) {
+    if (error) throw error;
+    console.log('Rekordy z tabeli comments: ', results);
+    res.send(results);
+  });
+});
+
+app.post('/postComment', (req, res) => {
+  const user_id = req.body.user_id;
+  const ad_id = req.body.ad_id;
+  const date = req.body.date;
+  const content = req.body.content;
+  conn.query("INSERT INTO comments (user_id, ad_id, date, content) VALUES(?,?,?,?)", [user_id, ad_id, date, content], (error, result) => {
+    if (error) {
+      console.log(error);
+      res.send("Nie udało się dodać komentarza");
+    } else {
+      res.send("Sukces");
+    }
   });
 });
 

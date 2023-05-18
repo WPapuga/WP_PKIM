@@ -26,3 +26,75 @@ ul li {
     margin-left: 5px;
     margin-right: 5px;
 }
+
+.AdContainer {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.Ad {
+    width: 50%;
+    border-style: solid;
+    border-color: white;
+    border-radius: 15%;
+    background-color: #191C1C;
+}
+
+.CommentsContainer {
+    border-top: solid;
+    border-width: 10px;
+    border-color: white;
+}
+
+.CommentHeaderContainer {
+    border-color: white;
+    border-bottom: solid;
+}
+
+.Comment {
+    border-color: white;
+    border-bottom: solid;
+}
+
+.CommenHeader {
+    display: flex;
+    margin-bottom: 0px;
+}
+
+.CommentHeaderLeft {
+    flex: 50%;
+}
+
+.CommentHeaderRight {
+    flex: 50%;
+}
+
+.CommentContent {
+    margin-bottom: 0px;
+    padding-top: 0px;
+}
+
+.CommentContent p {
+    padding-top: 0px;
+    padding-bottom: 10px;
+}
+
+.InputLabel {
+    margin: 10px 0 10px 0;
+    font-size: 23px;
+}
+
+.InputButton {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #2E3033;
+    border-color: white;
+}
+
+.InputButton:hover {
+    background-color: #61dafb;
+    border-color: #61dafb;
+    color: #2E3033;
+}
