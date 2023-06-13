@@ -131,7 +131,7 @@ app.post('/register', (req, res) => {
       console.log("Duplikat");
       res.send({message: "Użytkownik o podanym emailu/nazwie użytkownika już istnieje"});
     } else {
-      res.send({message: "Sukces"});
+      res.send({message: "Sukces", user_id: result.insertId});
     }
   })
 });
